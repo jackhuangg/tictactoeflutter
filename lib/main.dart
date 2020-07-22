@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 //main function is starting point for all flutter apps
 void main() => runApp(MyApp());
@@ -19,13 +20,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var textformat = TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.bold);
-  var textformatbig = TextStyle(color: Colors.white,fontSize: 45,fontWeight: FontWeight.bold);
-
+  var textformat = TextStyle(fontFamily:'Montserrat',color: Colors.white,fontSize: 15,fontWeight: FontWeight.bold);
+  var textformattitle = TextStyle(fontFamily:'Montserrat',color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold);
+  var textformatbig = TextStyle(fontFamily:'Montserrat',color: Colors.white,fontSize: 80,);
+  int tempcounter=0;
   bool whosTurn = true;
   int countero=0;
   int counterx=0;
   int countturns=0;
+  List<int> inputlist = List<int>();
   List<String> displayExOh = [
     '',
     '',
@@ -43,7 +46,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       appBar: AppBar(
-        title: Text('Tic Tac Toe', style: textformat,),
+        title: Text('Tic Tac Toe', style: textformattitle,),
         backgroundColor: Colors.blueGrey,
       ),
       body: Column(
@@ -104,19 +107,33 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void _tapped(int index) {
+  void _tapped(int index) {                       //this performs input checking for clicking a taken spot
+    tempcounter = 0;
+    inputlist.add(index);
+    print(inputlist);
+    for(int i = 0; i< inputlist.length; i++){
+      if(inputlist[i] == index){
+        tempcounter++;                            //keeps track of # instances for current grid index
+        print(tempcounter);
+        if(tempcounter == 2) {                      //program has ran into same spot input, which we won't allow
+          countturns--;
+          return;
+        }
+      }
+    }
+
     setState(() {
       if (whosTurn) {
-        displayExOh[index] = 'O';
+        displayExOh[index] = 'O';   //sets current grid to either X or O depending on whose turn
       } else {
         displayExOh[index] = 'X';
       }
-      whosTurn = !whosTurn;
+      whosTurn =! whosTurn;         //takes negation so it will switch to other player
       _checkWinner();
     });
   }
 
-  void _checkWinner() {
+  void _checkWinner() {             //brute force method of checking all possible win combos
     if (displayExOh[0] == displayExOh[1] && displayExOh[1] == displayExOh[2] && displayExOh[0] != '') {
       _displayWinner(displayExOh[0]);
     }
@@ -141,7 +158,7 @@ class _HomePageState extends State<HomePage> {
     if (displayExOh[2] == displayExOh[4] && displayExOh[4] == displayExOh[6] && displayExOh[2] != '') {
       _displayWinner(displayExOh[2]);
     }
-    if(countturns==9){
+    if(countturns==9){                //counter used to determine if there's a tie
       _displayWinner('No one');
     }
   }
@@ -164,7 +181,7 @@ class _HomePageState extends State<HomePage> {
           );
         }
     );
-    if(answer=='O'){
+    if(answer=='O'){                           //this is used to update the score tallies
       countero++;
     }
     if(answer=='X'){
@@ -174,9 +191,10 @@ class _HomePageState extends State<HomePage> {
   void _clearBoard(){
     setState(() {
       for(int i=0;i<9;i++){
-        displayExOh[i]='';
+        displayExOh[i]='';                      //resets the grid
       }
     });
     countturns=0;
+    inputlist.removeRange(0,inputlist.length);  //clears the input list
   }
 }
