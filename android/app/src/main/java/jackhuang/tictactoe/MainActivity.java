@@ -1,4 +1,4 @@
-package jackhuang.tic_tac_toe;
+package jackhuang.tictactoe;
 
 import io.flutter.embedding.android.FlutterActivity;
 

@@ -1,4 +1,4 @@
-# tic_tac_toe
+# tictactoe
 
 A new Flutter application.
 

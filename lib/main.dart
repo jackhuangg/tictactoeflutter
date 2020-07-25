@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 //main function is starting point for all flutter apps
 void main() => runApp(MyApp());
