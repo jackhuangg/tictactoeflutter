@@ -1,16 +1,9 @@
 # tictactoe
 
-A new Flutter application.
+A tictactoe game made with Flutter! 
 
-## Getting Started
+## Screenshots of gameplay
+![Simulator Screen Shot - iPhone 11 Pro - 2020-07-25 at 16 42 30](https://user-images.githubusercontent.com/58582357/88468271-da87c000-ce95-11ea-8109-6be8bae628d4.png)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
