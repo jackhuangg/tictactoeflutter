@@ -43,10 +43,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.blue[800],
       appBar: AppBar(
         title: Text('Tic Tac Toe', style: textformattitle,),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.blueGrey[600],
       ),
       body: Column(
         children: <Widget>[
@@ -136,28 +136,28 @@ class _HomePageState extends State<HomePage> {
     if (displayExOh[0] == displayExOh[1] && displayExOh[1] == displayExOh[2] && displayExOh[0] != '') {
       _displayWinner(displayExOh[0]);
     }
-    if (displayExOh[3] == displayExOh[4] && displayExOh[4] == displayExOh[5] && displayExOh[3] != '') {
+    else if (displayExOh[3] == displayExOh[4] && displayExOh[4] == displayExOh[5] && displayExOh[3] != '') {
       _displayWinner(displayExOh[3]);
     }
-    if (displayExOh[6] == displayExOh[7] && displayExOh[7] == displayExOh[8] && displayExOh[6] != '') {
+    else if (displayExOh[6] == displayExOh[7] && displayExOh[7] == displayExOh[8] && displayExOh[6] != '') {
       _displayWinner(displayExOh[6]);
     }
-    if (displayExOh[0] == displayExOh[3] && displayExOh[3] == displayExOh[6] && displayExOh[0] != '') {
+    else if (displayExOh[0] == displayExOh[3] && displayExOh[3] == displayExOh[6] && displayExOh[0] != '') {
       _displayWinner(displayExOh[0]);
     }
-    if (displayExOh[1] == displayExOh[4] && displayExOh[4] == displayExOh[7] && displayExOh[1] != '') {
+    else if (displayExOh[1] == displayExOh[4] && displayExOh[4] == displayExOh[7] && displayExOh[1] != '') {
       _displayWinner(displayExOh[1]);
     }
-    if (displayExOh[2] == displayExOh[5] && displayExOh[5] == displayExOh[8] && displayExOh[2] != '') {
+    else if (displayExOh[2] == displayExOh[5] && displayExOh[5] == displayExOh[8] && displayExOh[2] != '') {
       _displayWinner(displayExOh[2]);
     }
-    if (displayExOh[0] == displayExOh[4] && displayExOh[4] == displayExOh[8] && displayExOh[0] != '') {
+    else if (displayExOh[0] == displayExOh[4] && displayExOh[4] == displayExOh[8] && displayExOh[0] != '') {
       _displayWinner(displayExOh[0]);
     }
-    if (displayExOh[2] == displayExOh[4] && displayExOh[4] == displayExOh[6] && displayExOh[2] != '') {
+    else if (displayExOh[2] == displayExOh[4] && displayExOh[4] == displayExOh[6] && displayExOh[2] != '') {
       _displayWinner(displayExOh[2]);
     }
-    if(countturns==9){                //counter used to determine if there's a tie
+    else if(countturns==9){                //counter used to determine if there's a tie
       _displayWinner('No one');
     }
   }
