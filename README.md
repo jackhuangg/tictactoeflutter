@@ -2,12 +2,10 @@
 
 A tictactoe game made with Flutter! 
 
-## some pictures of gameplay
+## Some pictures of gameplay
 
-![20%](readmeimages/home.png | width = 50%)
-![20%](readmeimages/filled.png)
-![20%](readmeimages/tie.png)
-![20%](readmeimages/winner.png)
-
-<img
+<img src="readmeimages/home.png" width="450">
+<img src="readmeimages/filled.png" width="450">
+<img src="readmeimages/tie.png" width="450">
+<img src="readmeimages/winner.png" width="450">
 
