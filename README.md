@@ -1,6 +1,6 @@
-# tictactoe
+# Tic Tac Toe
 
-A tictactoe game made with Flutter! 
+A Tic Tac Toe game made with Flutter!
 
 ## Some pictures of gameplay
 
