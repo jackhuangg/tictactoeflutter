@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 //main function is starting point for all flutter apps
@@ -166,7 +167,7 @@ class _HomePageState extends State<HomePage> {
         barrierDismissible: false,
         context: context,
         builder: (BuildContext context){
-          return AlertDialog(
+          return CupertinoAlertDialog(
             title: Text(answer+' is the winner.'),
             actions: <Widget>[
               FlatButton(
